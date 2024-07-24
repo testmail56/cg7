@@ -61,6 +61,54 @@ plt.title("4")
 plt.axis("off")
 plt.show()
 
+# Up- down
+
+import cv2
+import numpy as np
+# Read the image
+img = cv2.imread(image_path)
+# Get the height and width of the image
+height, width = img.shape[:2]
+up = img[:height//2,:]
+down = img[height//2:,:]
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+plt.imshow(up)
+plt.title("Up")
+plt.axis("off")
+plt.subplot(1, 2, 2)
+plt.imshow(down)
+plt.title("down")
+plt.axis("off")
+plt.show()
+
+# left- right
+
+import cv2
+import numpy as np
+# Read the image
+img = cv2.imread('/content/3.PNG')
+# Get the height and width of the image
+height, width = img.shape[:2]
+left = img[:, :width//2]
+right = img[:, width//2:]
+up = img[:height//2,:]
+down = img[height//2:,:]
+quad1 = img[:height//2, :width//2]
+quad2 = img[:height//2, width//2:]
+quad3 = img[height//2:, :width//2]
+quad4 = img[height//2:, width//2:]
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+plt.imshow(left)
+plt.title("left")
+plt.axis("off")
+plt.subplot(1, 2, 2)
+plt.imshow(right)
+plt.title("right")
+plt.axis("off")
+plt.show()
+
 `
 
 function myFunction() {
